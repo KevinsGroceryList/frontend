@@ -1,0 +1,17 @@
+<div class="container center">
+    <form class="login-form" (submit)="loginAccount()">
+        <h2>Login</h2>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Username" name="username" [(ngModel)]="account.username">
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="account.password">
+          </div>
+          <div *ngIf="message" class= "mb-3 err-message" role="alert">
+            {{message}}
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary">Login</button>
+          </div>
+    </form>
+</div>
