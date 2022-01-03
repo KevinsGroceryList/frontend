@@ -1,0 +1,38 @@
+.create-item-form{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-item-form input{
+    width: 75%;
+}
+
+.create-item-form button{
+    width: 25%;
+    margin-left: 10px;
+}
+
+
+.grocery-item{
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(195, 195, 195);
+    border-radius: 6px;
+}
+
+.toggle{
+    text-decoration: line-through;
+}
+
+.grocery-item h3{
+    text-transform: capitalize;
+}
+
+#checkout-btn{
+    margin-top: 5px;
+    width: 100%;
+}

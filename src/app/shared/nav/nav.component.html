@@ -1,18 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/">GroceryList</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/register">Register</a>
-          </li>
-          <!-- <li class="nav-item">
-            <button class="btn btn-outline-danger">Logout</button>
-          </li> -->
-        </ul>
-      </div>
+      <a *ngIf="!name" class="navbar-brand">GroceryList</a>
+      <a *ngIf="name" class="navbar-brand">{{'Hello, ' + name}}</a>
+      <button *ngIf="name" class="btn btn-outline-danger" (click)="logout()">Logout</button>
+      <button *ngIf="!name" class="btn btn-outline-info" (click)="register()">Register</button>
     </div>
   </nav>

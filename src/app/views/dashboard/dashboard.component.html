@@ -1,1 +1,17 @@
-<p>dashboard works!</p>
+<app-nav [name]="this.account.firstname + ' ' + this.account.lastname"></app-nav>
+
+<div class="container">
+    <form class="create-item-form" (submit)="createItem()">
+        <input type="text" name="item-name" [(ngModel)]="itemInput" />
+        <button class="btn btn-primary">Add</button>
+    </form>
+
+    <div *ngFor="let item of items" class="grocery-item" [id]="item.id" (click)="toggleInCart($event)">
+        <!-- stop propogation stops your click events from propagating to parent click events -->
+        <h3 *ngIf="!item.inCart" class="item-name" (click)="$event.stopPropagation()">{{item.name}}</h3>
+        <h3 *ngIf="item.inCart" class="item-name toggle" (click)="$event.stopPropagation()">{{item.name}}</h3>
+        <button class="btn btn-danger" (click)="deleteItem($event)">Delete</button>
+    </div>
+
+    <button *ngIf="!basketEmpty" class="btn btn-outline-danger" id="checkout-btn" (click)="removeInCartItems()">Check Out</button>
+</div>
